@@ -1,0 +1,25 @@
+{
+    "snapshot_path": "./snapshot_file",
+    "mem_backend": {
+        "backend_path": "./mem_file",
+        "backend_type": "File"
+    },
+    "enable_diff_snapshots": true,
+    "resume_vm": false,
+  "boot-source": {
+    "kernel_image_path": "hello-vmlinux.bin",
+    "boot_args": "ro console=ttyS0 noapic reboot=k panic=1 pci=off nomodules random.trust_cpu=on"
+  },
+  "drives": [
+    {
+      "drive_id": "rootfs",
+      "path_on_host": "hello-rootfs.ext4",
+      "is_root_device": true,
+      "is_read_only": false
+    }
+  ],
+  "machine-config": {
+    "vcpu_count": 2,
+    "mem_size_mib": 1024
+  }
+}
